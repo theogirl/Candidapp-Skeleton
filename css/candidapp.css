@@ -1,0 +1,132 @@
+
+
+body {
+  font-size: 1.6em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #222; }
+
+
+a {
+	text-decoration: none;
+	color: #ba111a;
+}
+
+a:hover {
+	color: white;
+	background-color: #ba111a;
+}
+
+h1 {
+	line-height: 1;
+	margin-top: 15px;
+}
+/*----------PREHEADER----------*/
+
+.preheader {
+	padding-top: 30px;
+}
+
+.logo {
+	height: 50px;
+	background: url(../images/logo.jpg);
+	background-size: 330px auto;
+	background-repeat: no-repeat;
+}
+
+.date {
+	text-align: center;
+	margin-top: 60px;
+}
+
+@media (min-width: 750px) {
+	.preheader {
+	padding-top: 50px;
+}
+	.date {
+		text-align: right;
+		margin-top: 0;
+	}
+	.logo {
+		margin-top: 10px;
+	}
+}
+
+
+/*-------RED BANNER INTRO-------*/
+
+.red-header {
+	background-color: #ba111a;
+	padding: 20px 10px;
+	margin-top: 20px;
+}
+
+
+.red-image {
+	padding: 20px 0;
+}
+
+.red-copy {
+	color: white;
+	text-align: left;
+}
+
+.red-copy p {
+	line-height: 1.6em;
+}
+
+@media (min-width: 550px) {
+	.red-header {
+	padding: 10px 0;
+	margin-top: 10px;
+}
+}
+
+/*---NUMBERS_STATS----*/
+
+.stats {
+	background-color: #ebebeb;
+	margin: 20px 0;
+	padding: 40px 10px;
+}
+
+.number-txt {
+	text-align: center;
+	font-size: 2rem;
+	line-height: 1.3;
+}
+
+.number-seats {
+	font-size: 15rem;
+	padding: 10px 0;
+	background-image: url(../images/house.png);
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+
+.number-candidates {
+	font-size: 15rem;
+	padding: 10px 0;
+	background-image: url(../images/candidates.png);
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+
+.number-days {
+	font-size: 15rem;
+	padding: 10px 0;
+	background-image: url(../images/cal.png);
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+
+
+@media (min-width: 550px) {
+	.stats {
+		padding:50px;
+	}
+}
