@@ -88,7 +88,7 @@ h1 {
 .stats {
 	background-color: #ebebeb;
 	margin: 20px 0;
-	padding: 40px 10px;
+	padding: 35px 10px;
 }
 
 .number-txt {
@@ -127,6 +127,44 @@ h1 {
 
 @media (min-width: 550px) {
 	.stats {
-		padding:50px;
+		padding:40px;
 	}
 }
+
+/*---BUTTONS----*/
+
+.buttons {
+	text-align: center;
+	padding: 40px 0;
+
+}
+
+.btn-up,
+.btn-down {
+	font-size: 2rem;
+	padding: 10px 40px;
+	cursor: pointer;
+	border-radius: 4px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.btn-up, .btn-down:hover {
+	background-color: #ba111a;
+	border: 2px solid #ba111a;
+	color: white;
+}
+
+#btn-all {
+	padding: 10px 65px;
+	margin-right: 15px;
+}
+
+.btn-down, .btn-up:hover {
+	background-color: white;
+	border: 2px solid #ba111a;
+	color: #ba111a;
+}
+
+
+
