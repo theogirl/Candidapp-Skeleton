@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('.candidate').hide();
+	$('.candidates').hide();
 
 //------GLOBAL VARIABLES---------//
 	var total = '';
@@ -37,9 +37,9 @@ getAll();
 
 //-------EVENTS---------//
 
-	$('#btn-party').click(function(e) {  //listen for submit event
+	$('#btn-all').click(function(e) {  //listen for submit event
 		e.preventDefault();
-		$('.candidate').show();
+		$('.candidates').show();
 
 		//displayInfo();
 	})
@@ -50,7 +50,7 @@ function getAll() {
 
 var url = 'https://represent.opennorth.ca/candidates/?callback=?';
 var params = {
-	  limit: 40//use limit=1000 to get full list
+	  limit: 1000//use limit=1000 to get full list
 	};
 
 $.getJSON(url, params, function(data) {
@@ -92,6 +92,9 @@ $.getJSON(url, params, function(data) {
 				break;
 			case "Liberal" :
 		    	party = '<span style="color: #d51d29;">' + party +'</span>'; 
+				break;
+			case "Libertarian" :
+		    	party = '<span style="color: #f1ba1b;">' + party +'</span>'; 
 				break;
 		}
 
