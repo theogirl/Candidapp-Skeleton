@@ -98,7 +98,7 @@ h1 {
 }
 
 .number-seats {
-	font-size: 15rem;
+	font-size: 13rem;
 	padding: 10px 0;
 	background-image: url(../images/house.png);
 	background-repeat: no-repeat;
@@ -107,22 +107,23 @@ h1 {
 }
 
 .number-candidates {
-	font-size: 15rem;
+	font-size: 13rem;
 	padding: 10px 0;
 	background-image: url(../images/candidates.png);
-	background-repeat: no-repeat;
-	background-size: 80%;
+	background-repeat: no-repeat; 	
+	background-size: 90%;
 	background-position: center;
 }
 
 .number-days {
-	font-size: 15rem;
+	font-size: 13rem;
 	padding: 10px 0;
 	background-image: url(../images/cal.png);
 	background-repeat: no-repeat;
-	background-size: 80%;
+	background-size: 110%;
 	background-position: center;
 }
+
 
 
 @media (min-width: 550px) {
@@ -145,8 +146,8 @@ h1 {
 	padding: 10px 40px;
 	cursor: pointer;
 	border-radius: 4px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .btn-up, .btn-down:hover {
@@ -156,7 +157,6 @@ h1 {
 }
 
 #btn-all {
-	padding: 10px 65px;
 	margin-right: 15px;
 }
 
@@ -167,4 +167,9 @@ h1 {
 }
 
 
-
+@media (min-width: 550px) {
+	.btn-up, .btn-down {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	}
+}

@@ -21,6 +21,17 @@ $(document).ready(function() {
 	$('#date').text(today);
 
 
+//----Get days between today and election---//
+
+	var thisDay = new Date();    
+    var electionDay = new Date("2015/10/15");
+    var diff = (electionDay - thisDay)/1000;
+    var diff = Math.abs(Math.floor(diff)); 
+    var days = Math.ceil(diff/(24*60*60));
+    $('.number-days').text(days);
+
+
+
 getAll();
 
 
