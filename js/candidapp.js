@@ -40,6 +40,9 @@ getAll();
 	$('#btn-all').click(function(e) {  //listen for submit event
 		e.preventDefault();
 		$('.candidates').show();
+		var showMe = $('.buttons')[0];
+		showMe.scrollIntoView();
+
 
 		//displayInfo();
 	})
@@ -101,7 +104,7 @@ $.getJSON(url, params, function(data) {
 
 		
 		if (personalURL !== "") {
-			var candidate = '<li class="list-item">'+photo+'<div class="info"><a class="website" href=\"'+personalURL+'\">'+name+' <i class="fa fa-globe"></i></a><br />'+party+'</div></li>';
+			var candidate = '<li class="list-item">'+photo+'<div class="info"><a class="website" target="_blank" href=\"'+personalURL+'\">'+name+' <i class="fa fa-chevron-circle-right"></i></a><br />'+party+'</div></li>';
 				$('.can-all').append(candidate);
 		}
 		else {
