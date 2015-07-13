@@ -59,14 +59,17 @@ h1 {
 /*-------RED BANNER INTRO-------*/
 
 .red-header {
-	background-color: #ba111a;
+	background: url(../images/crazy-leafs.png) #ba111a;
 	padding: 20px 10px;
 	margin-top: 20px;
 }
 
 
 .red-image {
-	padding: 20px 0;
+	padding: 180px 0;
+	background: url(../images/parliament.png) no-repeat center;
+	background-size: cover;
+
 }
 
 .red-copy {
@@ -352,7 +355,7 @@ h1 {
 
 .footer {
 	background-color: black;
-	height: 50px;
+	height: 100px;
 	color: grey;
 	padding: 10px 0;
 	text-align: center;
@@ -362,3 +365,8 @@ h1 {
 	font-size: 1.1em;
 }
 
+@media (min-width: 550px) {
+	.footer {
+		height: 50px;
+	}
+}
