@@ -1,13 +1,20 @@
 $(document).ready(function() {
 	$('.candidates').hide();
+	$('.conservatives').hide();
+	$('.green').hide();
+	$('.liberals').hide();
+	$('.libertarians').hide();
+	$('.NDP').hide();
 
 //------GLOBAL VARIABLES---------//
 	var total = '';
-	var maleCount = 0;
-	var femaleCount = 0;
 	var photo = '';
+	var photoURL = '';
 	var myData = {};
 	var myStats = '';
+	var party = '';
+	var name = '';
+	var personalURL = '';
 
 //-----Display current date---//
 	var today = new Date();
@@ -32,7 +39,7 @@ $(document).ready(function() {
 
 
 
-getAll();
+getData();
 
 
 //-------EVENTS---------//
@@ -40,16 +47,34 @@ getAll();
 	$('#btn-all').click(function(e) {  //listen for submit event
 		e.preventDefault();
 		$('.candidates').show();
+		$('.conservatives').hide();
+		$('.green').hide();
+		$('.liberals').hide();
+		$('.libertarians').hide();
+		$('.NDP').hide();
+		getAll(myData);
 		var showMe = $('.buttons')[0];
 		showMe.scrollIntoView();
-
-
-		//displayInfo();
 	})
+
+
+	$('#btn-party').click(function(e) {  //listen for submit event
+		e.preventDefault();
+		$('.candidates').hide();
+		$('.conservatives').show();
+		$('.green').show();
+		$('.liberals').show();
+		$('.libertarians').show();
+		$('.NDP').show();
+		getParty(myData);
+		var showMe = $('.buttons')[0];
+		showMe.scrollIntoView();
+	})
+
 
 //-------FUNCTIONS---------//
 
-function getAll() {
+function getData() {
 
 var url = 'https://represent.opennorth.ca/candidates/?callback=?';
 var params = {
@@ -70,20 +95,25 @@ $.getJSON(url, params, function(data) {
 			alert('no data!');
 	}
 
-	$.each(data.objects, function(i, candidates) {
+
+});//end AJAX request
+} //end getData
+
+function getAll() {
+
+$.each(myData, function(i, candidates) {
 
 
 		//update global variables with actual data
-		var name = candidates.name;
-		var personalURL = candidates.personal_url;
-		var gender = candidates.gender;
-		var photoURL = candidates.photo_url;
-		var district = candidates.district_name;
-		var email = candidates.email;
-		var photo = '<div class="avatar" style=\"background-image: url('+photoURL+')\"></div>';
-		var party = candidates.party_name;
+		name = candidates.name;
+		personalURL = candidates.personal_url;
+		photoURL = candidates.photo_url;
+		//var district = candidates.district_name;
+		//var email = candidates.email;
+		photo = '<div class="avatar" style=\"background-image: url('+photoURL+')\"></div>';
+		party = candidates.party_name;
 
-		switch(party) {
+switch(party) {
 		    case "Green Party" :
 		    	party = '<span style="color: #3d9b35;">' + party +'</span>'; 
 				break;
@@ -101,7 +131,6 @@ $.getJSON(url, params, function(data) {
 				break;
 		}
 
-
 		
 		if (personalURL !== "") {
 			var candidate = '<li class="list-item">'+photo+'<div class="info"><a class="website" target="_blank" href=\"'+personalURL+'\">'+name+' <i class="fa fa-chevron-circle-right"></i></a><br />'+party+'</div></li>';
@@ -111,12 +140,69 @@ $.getJSON(url, params, function(data) {
 			var candidate = '<li class="list-item">'+photo+'<div class="info">'+name+'<br />'+party+'</div></li>';
 			$('.can-all').append(candidate);
 		};
-		
-	});//end each
 
-});//end AJAX request
-//$('.candidate').append('<p>Show more results...</p>	');
-} //end getData
+});//end each
+
+}//end getAll
+
+
+function getParty() {
+
+$.each(myData, function(i, candidates) {
+
+
+		//update global variables with actual data
+		name = candidates.name;
+		personalURL = candidates.personal_url;
+		photoURL = candidates.photo_url;
+		//var district = candidates.district_name;
+		//var email = candidates.email;
+		photo = '<div class="avatar" style=\"background-image: url('+photoURL+')\"></div>';
+		party = candidates.party_name;
+
+		if (personalURL !== "") {
+			var candidate = '<li class="list-item">'+photo+'<div class="info"><a class="website" target="_blank" href=\"'+personalURL+'\">'+name+' <i class="fa fa-chevron-circle-right"></i></a></div></li>';
+			switch (party) {
+				case "Liberal" :
+					$('.libs-list').append(candidate);
+					break;
+				case "Green Party" :
+					$('.green-list').append(candidate);
+					break;
+				case "NDP" :
+					$('.ndp-list').append(candidate);
+					break;
+				case "Conservative" :
+					$('.cons-list').append(candidate);
+					break;
+				case "Libertarian" :
+					$('.liber-list').append(candidate);
+					break;
+			}//end switch
+		}//end if
+
+		else {
+			var candidate = '<li class="list-item">'+photo+'<div class="info">'+name+'</div></li>';
+			switch (party) {
+				case "Liberal" :
+					$('.libs-list').append(candidate);
+					break;
+				case "Green Party" :
+					$('.green-list').append(candidate);
+					break;
+				case "NDP" :
+					$('.ndp-list').append(candidate);
+					break;
+				case "Conservative" :
+					$('.cons-list').append(candidate);
+					break;
+				case "Libertarian" :
+					$('.liber-list').append(candidate);
+					break;
+			}//end switch
+		}//end else
+});//end each
+}
 
 
 

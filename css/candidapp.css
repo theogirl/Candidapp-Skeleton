@@ -248,13 +248,83 @@ h1 {
 
 .candidates {
 	text-align: center;
-	background: url(../images/grey-leaf.png);
+	background: url(../images/grey-leaf-lt.png);
 	background-size: 30px 30px;
 }
 
 
 
 /*---CANDIDATES (BY PARTY)----*/
+
+.conservatives {
+	background: url(../images/grey-leaf-lt.png);
+	background-size: 30px 30px;
+}
+
+.liberals {
+	background: url(../images/white-leaf.png) #f5dbdd;
+	background-size: 30px 30px;
+}
+
+.green {
+	background: url(../images/white-leaf.png) #c5dbc9;
+	background-size: 30px 30px;
+}
+
+.NDP {
+	background: url(../images/white-leaf.png) #f9d2bb;
+	background-size: 30px 30px;
+}
+
+.libertarians {
+	background: url(../images/white-leaf.png) #d9d9ec;
+	background-size: 30px 30px;
+}
+
+.cons-header,
+.ndp-header,
+.green-header,
+.liber-header,
+.libs-header {
+	background-size: 149px 60px;
+	height: 60px;
+}
+
+.libs-header {
+	background: url(../images/logo-liberal.jpg) no-repeat center #c91c26;
+}
+
+.ndp-header {
+	background: url(../images/logo-ndp.jpg) no-repeat center #f3833c;
+}
+
+.liber-header {
+	background: url(../images/logo-liber.jpg) no-repeat center #14175c;
+}
+
+.green-header {
+	background: url(../images/logo-green.jpg) no-repeat center #159e32;
+}
+
+.cons-header {
+	background: url(../images/logo-cons.jpg) no-repeat center white;
+	border: 2px solid #263893;
+}
+
+
+
+.cons-list,
+.ndp-list,
+.green-list,
+.liber-list,
+.libs-list {
+	text-align: center;
+	background-color: white;
+	padding-top: 10px;
+	margin-top: 0;
+}
+
+
 
 
 
