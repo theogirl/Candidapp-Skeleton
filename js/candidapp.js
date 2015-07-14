@@ -1,10 +1,6 @@
 $(document).ready(function() {
 	$('.candidates').hide();
-	$('.conservatives').hide();
-	$('.green').hide();
-	$('.liberals').hide();
-	$('.libertarians').hide();
-	$('.NDP').hide();
+	$('.parties').hide();
 
 //------GLOBAL VARIABLES---------//
 	var total = '';
@@ -47,11 +43,7 @@ getData();
 	$('#btn-all').click(function(e) {  //listen for submit event
 		e.preventDefault();
 		$('.candidates').show();
-		$('.conservatives').hide();
-		$('.green').hide();
-		$('.liberals').hide();
-		$('.libertarians').hide();
-		$('.NDP').hide();
+		$('.parties').hide();
 		getAll(myData);
 		var showMe = $('.buttons')[0];
 		showMe.scrollIntoView();
@@ -61,11 +53,7 @@ getData();
 	$('#btn-party').click(function(e) {  //listen for submit event
 		e.preventDefault();
 		$('.candidates').hide();
-		$('.conservatives').show();
-		$('.green').show();
-		$('.liberals').show();
-		$('.libertarians').show();
-		$('.NDP').show();
+		$('.parties').show();
 		getParty(myData);
 		var showMe = $('.buttons')[0];
 		showMe.scrollIntoView();
