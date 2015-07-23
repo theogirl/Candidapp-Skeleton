@@ -1,7 +1,10 @@
 $(document).ready(function() {
 	$('.candidates').hide();
 	$('.parties').hide();
+	$('.box2').delay(1500).effect("bounce","slow");
 
+
+	
 //------GLOBAL VARIABLES---------//
 	var total = '';
 	var photo = '';
@@ -33,9 +36,11 @@ $(document).ready(function() {
     var days = Math.ceil(diff/(24*60*60));
     $('.number-days').text(days);
 
+//----Data request---//
+
+	getData();
 
 
-getData();
 
 
 //-------EVENTS---------//
@@ -76,7 +81,7 @@ $.getJSON(url, params, function(data) {
 			myData = data.objects;
 			myStats = data.meta;
 			total = myStats.total_count;
-			$('.number-candidates').append(total);//to update stat for total candidates
+			$('.number-candidates').text(total);//to update stat for total candidates
 			myData.sort(dynamicSort("name"));
 	}
 	else {
